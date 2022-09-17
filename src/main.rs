@@ -18,8 +18,6 @@ enum BmpError {
 
 #[derive(Debug)]
 struct Bmp {
-    image_size: u32,
-    pixel_offset: u32,
     pixels: Vec<Vec<Color>>,
 }
 
@@ -46,11 +44,7 @@ impl Bmp {
             }
         }
 
-        Ok(Bmp {
-            image_size: size,
-            pixel_offset,
-            pixels: buf,
-        })
+        Ok(Bmp { pixels: buf })
     }
 }
 
